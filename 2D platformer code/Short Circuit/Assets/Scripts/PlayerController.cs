@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed;
+    public float sprintSpeed;
+    private float moveVelocity;
     public float jumpHeight;
 
     //Variables for finding the ground
@@ -40,8 +42,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //RESPAWN KEY
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            levelManager.RespawnPlayer();
+        }
         //JUMP CODE
-        if(grounded) 
+        if (grounded) 
         {
             doubleJumped = false;
         }
@@ -59,35 +66,29 @@ public class PlayerController : MonoBehaviour
             doubleJumped = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            levelManager.RespawnPlayer();
-        }
-
         //LEFT - RIGHT CONTROLS
+
+        moveVelocity = 0f;
+
         if (Input.GetKey(KeyCode.D))
         {
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                moveHoriz(moveSpeed + 10);
-            }
-            else
-            {
-                moveHoriz(moveSpeed);
-            }
+            moveVelocity = moveSpeed;
+
+                //moveHoriz(moveSpeed);
+            
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            if(Input.GetKeyDown(KeyCode.LeftShift))
+            moveVelocity = -moveSpeed;
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                moveHoriz(-moveSpeed - 10);
-            }
-            else
-            {
-                moveHoriz(-moveSpeed);
+                moveSpeed -= sprintSpeed;
+                //moveHoriz(-moveSpeed);
             }
         }
+
+        GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 
         // WALKING ANIMATION
         anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
