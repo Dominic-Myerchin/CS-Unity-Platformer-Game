@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
     public GameObject deathParticle;
     public GameObject respawnParticle;
 
+    public int pointsPenaltyOnDeath;
+
     public float respawnTime;
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,7 @@ public class LevelManager : MonoBehaviour
         player.enabled = false;
         player.GetComponent<Renderer>().enabled = false;
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        ScoreManager.AddPoints(-pointsPenaltyOnDeath);
         Debug.Log("Player Respawn");
         yield return new WaitForSeconds(respawnTime);
         player.transform.position = currentCheckpoint.transform.position;
