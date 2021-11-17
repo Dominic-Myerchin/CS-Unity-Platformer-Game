@@ -81,11 +81,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             moveVelocity = -moveSpeed;
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                moveSpeed -= sprintSpeed;
-                //moveHoriz(-moveSpeed);
-            }
         }
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
