@@ -16,16 +16,22 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
     private bool grounded;
 
+    public bool dead;
     private bool doubleJumped;
 
     private Animator anim;
-
     public LevelManager levelManager;
     private SpriteRenderer spriteRenderer;
 
+    public Transform firePoint;
+    public GameObject ninjaStar;
+
+    public float shotDelay;
+    private float ShotDelayCounter;
     // Start is called before the first frame update
     void Start()
     {
+        dead = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (!spriteRenderer) Debug.LogError("Can't Find the Sprite Renderer");
         anim = GetComponent<Animator>();
@@ -69,22 +75,26 @@ public class PlayerController : MonoBehaviour
         //LEFT - RIGHT CONTROLS
 
         moveVelocity = 0f;
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            moveVelocity = moveSpeed;
-
-                //moveHoriz(moveSpeed);
-            
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            moveVelocity = -moveSpeed;
-        }
-
+        if (Input.GetKey(KeyCode.D)){ moveVelocity = moveSpeed; }
+        if (Input.GetKey(KeyCode.A)){ moveVelocity = -moveSpeed; }
         GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 
+        //SHOOTING CODE
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Instantiate(ninjaStar, firePoint.position, firePoint.rotation);
+            ShotDelayCounter = shotDelay;
+        }
+        if (Input.GetKey(KeyCode.Return))
+        {
+            ShotDelayCounter -= Time.deltaTime; //count down the time since the last frame, makles it count down for n seconds onwards
+
+            if (ShotDelayCounter <= 0)
+            {
+                ShotDelayCounter = shotDelay;
+                Instantiate(ninjaStar, firePoint.position, firePoint.rotation);
+            }
+        }
         // WALKING ANIMATION
         anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
         
