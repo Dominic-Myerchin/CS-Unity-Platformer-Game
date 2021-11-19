@@ -36,6 +36,13 @@ public class NinjaStarController : MonoBehaviour
        GetComponent<Rigidbody2D>().velocity = new Vector3(speed, GetComponent<Rigidbody2D>().velocity.y, 1);
 
         GetComponent<Rigidbody2D>().angularVelocity = rotationSpeed;
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Instantiate(impactEffect, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -47,8 +54,12 @@ public class NinjaStarController : MonoBehaviour
             //Destroy(other.gameObject);
             //ScoreManager.AddPoints(pointsForKill);
         }
-
-        Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
+        else
+        {
+            Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+        
     }
+    
 }
