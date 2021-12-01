@@ -19,18 +19,28 @@ public class PlayerController : MonoBehaviour
     public bool dead;
     private bool doubleJumped;
 
+    //player flipping vars
     private Animator anim;
     public LevelManager levelManager;
     private SpriteRenderer spriteRenderer;
 
+    //projectile variables
     public Transform firePoint;
     public GameObject ninjaStar;
-
     public float shotDelay;
     private float ShotDelayCounter;
     // Start is called before the first frame update
+
+    public float knockback;
+    public float knockbackLength;
+    public float knockbackCount;
+    public bool knockFromRight;
+
+    private Rigidbody2D body;
+
     void Start()
     {
+        body = GetComponent<Rigidbody2D>();
         dead = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (!spriteRenderer) Debug.LogError("Can't Find the Sprite Renderer");
@@ -77,7 +87,20 @@ public class PlayerController : MonoBehaviour
         moveVelocity = 0f;
         if (Input.GetKey(KeyCode.D)){ moveVelocity = moveSpeed; }
         if (Input.GetKey(KeyCode.A)){ moveVelocity = -moveSpeed; }
-        GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+        if (knockbackCount <= 0) { body.velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y); }
+        else 
+        {
+            if(knockFromRight)
+            {
+                body.velocity = new Vector2(-knockback, knockback);
+            }
+            else
+            {
+                body.velocity = new Vector2(knockback, knockback);
+            }
+            knockbackCount -= Time.deltaTime;
+        }
+        
 
         //SHOOTING CODE
         if (Input.GetKeyDown(KeyCode.Return))
