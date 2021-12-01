@@ -54,6 +54,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Player Respawn");
         yield return new WaitForSeconds(respawnTime);
         player.transform.position = currentCheckpoint.transform.position;
+        player.knockbackCount = 0;
         player.dead = false;
         player.enabled = true;
         cameraa.isFollowing = true;
