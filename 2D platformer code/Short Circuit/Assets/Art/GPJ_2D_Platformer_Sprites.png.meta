@@ -32,6 +32,18 @@ TextureImporter:
   - first:
       213: -2579309092437313543
     second: NinjaStar
+  - first:
+      213: 7580190869000698296
+    second: Player Sword
+  - first:
+      213: -7330090807420294860
+    second: Level Exit
+  - first:
+      213: -7573448162758238347
+    second: Coin_2
+  - first:
+      213: 6856404424955050984
+    second: Coin_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -338,7 +350,7 @@ TextureImporter:
         width: 6
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -346,6 +358,90 @@ TextureImporter:
       bones: []
       spriteID: 9f7b653db04743cd0800000000000000
       internalID: -2579309092437313543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Sword
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 101
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b9327c0f6f323960800000000000000
+      internalID: 7580190869000698296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Exit
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 48
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4396b544f39464a90800000000000000
+      internalID: -7330090807420294860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 84
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fd5f59505b5e690800000000000000
+      internalID: -7573448162758238347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_3
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 84
+        width: 1
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebbcd96f77d62f50800000000000000
+      internalID: 6856404424955050984
       vertices: []
       indices: 
       edges: []

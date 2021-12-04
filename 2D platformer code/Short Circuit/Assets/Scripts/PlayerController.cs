@@ -124,14 +124,22 @@ public class PlayerController : MonoBehaviour
         //PLAYER FLIPPING
         if(GetComponent<Rigidbody2D>().velocity.x > 0)
         {
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1f, 1f, 1f);
         } 
         else if (GetComponent<Rigidbody2D>().velocity.x < 0)
         {
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         
+        if (anim.GetBool("Sword"))
+        {
+            anim.SetBool("Sword", false);
+        }
+        if (Input.GetKey(KeyCode.L))
+        {
+            anim.SetBool("Sword", true);
 
+        }
     }
     public void Jump()
     {
