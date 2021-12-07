@@ -71,12 +71,12 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("Grounded", grounded);
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (Input.GetButtonDown("Jump") && grounded)
         {
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !grounded && !doubleJumped)
+        if (Input.GetButtonDown("Jump") && !grounded && !doubleJumped)
         {
             Jump();
             doubleJumped = true;
@@ -84,9 +84,8 @@ public class PlayerController : MonoBehaviour
 
         //LEFT - RIGHT CONTROLS
 
-        moveVelocity = 0f;
-        if (Input.GetKey(KeyCode.D)){ moveVelocity = moveSpeed; }
-        if (Input.GetKey(KeyCode.A)){ moveVelocity = -moveSpeed; }
+        //moveVelocity = 0f;
+        moveVelocity = moveSpeed * Input.GetAxisRaw("Horizontal");
         if (knockbackCount <= 0) { body.velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y); }
         else 
         {
@@ -103,12 +102,12 @@ public class PlayerController : MonoBehaviour
         
 
         //SHOOTING CODE
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(ninjaStar, firePoint.position, firePoint.rotation);
             ShotDelayCounter = shotDelay;
         }
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetButton("Fire1"))
         {
             ShotDelayCounter -= Time.deltaTime; //count down the time since the last frame, makles it count down for n seconds onwards
 
@@ -135,7 +134,7 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("Sword", false);
         }
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetButton("Fire2"))
         {
             anim.SetBool("Sword", true);
 
@@ -145,10 +144,4 @@ public class PlayerController : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
     }
-
-    public void moveHoriz(float moveSpeedVar)
-    {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeedVar, GetComponent<Rigidbody2D>().velocity.y);
-    }
-
 }

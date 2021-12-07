@@ -1491,7 +1491,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToAdd: 100
-  coinSoundEffect: {fileID: 116683253}
 --- !u!1 &286017914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,7 +2619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToAdd: 100
-  coinSoundEffect: {fileID: 116683253}
 --- !u!58 &577676707
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5883,6 +5881,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1077897361
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8652903098290320604, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_Name
+      value: Pause Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652903098290320605, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652903098290320605, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652903098290320605, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652903098290320605, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652903098290320605, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652903098290320605, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652903098290320605, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652903098290320605, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652903098290320605, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652903098290320605, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652903098290320605, guid: 708797cbb0e330842acf916ee8c97566,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 708797cbb0e330842acf916ee8c97566, type: 3}
 --- !u!4 &1103430173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6955636290775928683, guid: 23c13337c4805c2409b0e7d0c03f99fd,
@@ -7205,7 +7272,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToAdd: 100
-  coinSoundEffect: {fileID: 116683253}
 --- !u!58 &1466988637
 CircleCollider2D:
   m_ObjectHideFlags: 0
