@@ -144,4 +144,15 @@ public class PlayerController : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
     }
+    public void freezePosition()
+    {
+        body.constraints = RigidbodyConstraints2D.FreezePositionX;
+        body.constraints = RigidbodyConstraints2D.FreezePositionY;
+    }
+
+    public void unfreezePosition()
+    {
+        body.constraints = RigidbodyConstraints2D.None;
+        body.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
 }

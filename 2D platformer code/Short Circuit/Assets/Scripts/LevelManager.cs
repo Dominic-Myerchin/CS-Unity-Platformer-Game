@@ -16,7 +16,6 @@ public class LevelManager : MonoBehaviour
     public float respawnTime;
 
     public CameraController cameraa;
-    private float gravityStore;
 
     public HealthManager healthManager;
 
@@ -46,6 +45,7 @@ public class LevelManager : MonoBehaviour
     public IEnumerator RespawnPlayerCo()
     {
         player.dead = true;
+        player.freezePosition();
         Instantiate(deathParticle, player.transform.position, player.transform.rotation);
         player.enabled = false;
         player.GetComponent<Renderer>().enabled = false;
@@ -58,6 +58,7 @@ public class LevelManager : MonoBehaviour
         player.dead = false;
         player.enabled = true;
         cameraa.isFollowing = true;
+        player.unfreezePosition();
         player.GetComponent<Renderer>().enabled = true;
         healthManager.FullHealth();
         Instantiate(respawnParticle, currentCheckpoint.transform.position, currentCheckpoint.transform.rotation);

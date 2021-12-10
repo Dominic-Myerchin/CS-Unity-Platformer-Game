@@ -9,8 +9,11 @@ public class HealthManager : MonoBehaviour
     private static int playerHealth;
 
     Text text1;
-
     private LevelManager levelManager;
+
+    private LifeManager lifeSystem;
+
+    public bool isDead;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,10 @@ public class HealthManager : MonoBehaviour
         playerHealth = maxPlayerHealth;
 
         levelManager = FindObjectOfType<LevelManager>();
+
+        lifeSystem = FindObjectOfType<LifeManager>();
+
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -28,6 +35,7 @@ public class HealthManager : MonoBehaviour
         {
             playerHealth = 0;
             levelManager.RespawnPlayer();
+            lifeSystem.takeLife();
         }
 
         text1.text = "" + playerHealth;
