@@ -19,12 +19,15 @@ public class LevelManager : MonoBehaviour
 
     public HealthManager healthManager;
 
+    private LifeManager lifeSystem;
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
 
         healthManager = FindObjectOfType<HealthManager>();
+
+        lifeSystem = FindObjectOfType<LifeManager>();
     }
 
     // Update is called once per frame
@@ -51,8 +54,11 @@ public class LevelManager : MonoBehaviour
         player.GetComponent<Renderer>().enabled = false;
         cameraa.isFollowing = false;
         ScoreManager.AddPoints(-pointsPenaltyOnDeath);
+        lifeSystem.takeLife();
         Debug.Log("Player Respawn");
+
         yield return new WaitForSeconds(respawnTime);
+
         player.transform.position = currentCheckpoint.transform.position;
         player.knockbackCount = 0;
         player.dead = false;

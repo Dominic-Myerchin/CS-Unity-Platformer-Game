@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class LifeManager : MonoBehaviour
 {
+    public GameObject gameOverScreen;
+    public GameObject player;
+
 
     public int startingLives;
     private int lifeCounter;
@@ -16,11 +19,17 @@ public class LifeManager : MonoBehaviour
         theText = GetComponent<Text>();
 
         lifeCounter = startingLives;
+
+        player = FindObjectOfType<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (lifeCounter < 0)
+        {
+            gameOverScreen.SetActive(true);
+        }
         theText.text = "x" + lifeCounter;
     }
 
