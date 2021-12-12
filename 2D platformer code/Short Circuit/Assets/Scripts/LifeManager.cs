@@ -10,7 +10,7 @@ public class LifeManager : MonoBehaviour
     public PlayerController player;
 
 
-    public int startingLives;
+    //public int startingLives;
     private int lifeCounter;
 
     private Text theText;
@@ -23,7 +23,7 @@ public class LifeManager : MonoBehaviour
     {
         theText = GetComponent<Text>();
 
-        lifeCounter = startingLives;
+        lifeCounter = PlayerPrefs.GetInt("PlayerCurrentLives");
 
         player = FindObjectOfType<PlayerController>();
     }
@@ -52,10 +52,12 @@ public class LifeManager : MonoBehaviour
     public void giveLife()
     {
         lifeCounter++;
+        PlayerPrefs.SetInt("PlayerCurrentLives", lifeCounter);
     }
 
     public void takeLife()
     {
         lifeCounter--;
+        PlayerPrefs.SetInt("PlayerCurrentLives", lifeCounter);
     }
 }

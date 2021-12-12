@@ -238,6 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLevel: Level 1
   levelSelect: Level Select
+  playerLives: 5
 --- !u!1 &198011255
 GameObject:
   m_ObjectHideFlags: 0
