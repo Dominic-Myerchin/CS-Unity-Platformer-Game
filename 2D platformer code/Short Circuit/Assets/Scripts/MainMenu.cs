@@ -12,13 +12,13 @@ public class MainMenu : MonoBehaviour
     public int playerLives;
 
     public int playerHealth;
+
     public void NewGame()
     {
         PlayerPrefs.SetInt("PlayerCurrentLives", playerLives);
         PlayerPrefs.SetInt("CurrentScore", 0);
         PlayerPrefs.SetInt("PlayerCurrentHealth", playerHealth);
         PlayerPrefs.SetInt("PlayerMaxHealth", playerHealth);
-
         SceneManager.LoadScene(startLevel);
     }
 
@@ -26,6 +26,7 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("PlayerCurrentLives", playerLives);
         SceneManager.LoadScene(levelSelect);
+        PlayerPrefs.SetInt("CurrentScore", 0);
     }
 
     public void QuitGame()

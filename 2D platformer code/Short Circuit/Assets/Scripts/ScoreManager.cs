@@ -31,4 +31,10 @@ public class ScoreManager : MonoBehaviour
         score += pointsToAdd;
         PlayerPrefs.SetInt("CurrentScore", score);
     }
+
+    public static void Reset()
+    {
+        score = 0;
+        PlayerPrefs.SetInt("CurrentScore", score);  
+    }
 }

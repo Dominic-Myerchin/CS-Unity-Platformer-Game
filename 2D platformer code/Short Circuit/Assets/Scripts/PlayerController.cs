@@ -29,14 +29,20 @@ public class PlayerController : MonoBehaviour
     public GameObject ninjaStar;
     public float shotDelay;
     private float ShotDelayCounter;
-    // Start is called before the first frame update
 
+    //knockback vars
     public float knockback;
     public float knockbackLength;
     public float knockbackCount;
     public bool knockFromRight;
 
     private Rigidbody2D body;
+
+    //Ladder Variables
+    public bool onLadder;
+    public float climbSpeed;
+    private float climbVelocity;
+    private float gravityStore;
 
     void Start()
     {
@@ -46,6 +52,8 @@ public class PlayerController : MonoBehaviour
         if (!spriteRenderer) Debug.LogError("Can't Find the Sprite Renderer");
         anim = GetComponent<Animator>();
         levelManager = FindObjectOfType<LevelManager>();
+        gravityStore = body.gravityScale;
+        onLadder = false;
     }
 
     void FixedUpdate()
@@ -86,7 +94,7 @@ public class PlayerController : MonoBehaviour
 
         //moveVelocity = 0f;
         moveVelocity = moveSpeed * Input.GetAxisRaw("Horizontal");
-        if (knockbackCount <= 0) { body.velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y); }
+        if (knockbackCount <= 0) { body.velocity = new Vector2(moveVelocity, body.velocity.y); }
         else 
         {
             if(knockFromRight)
@@ -117,6 +125,18 @@ public class PlayerController : MonoBehaviour
                 Instantiate(ninjaStar, firePoint.position, firePoint.rotation);
             }
         }
+
+        //SWORD CODE
+        if (anim.GetBool("Sword"))
+                {
+                    anim.SetBool("Sword", false);
+                }
+                if (Input.GetButton("Fire2"))
+                {
+                    anim.SetBool("Sword", true);
+
+                }
+
         // WALKING ANIMATION
         anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
         
@@ -129,16 +149,22 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        
-        if (anim.GetBool("Sword"))
-        {
-            anim.SetBool("Sword", false);
-        }
-        if (Input.GetButton("Fire2"))
-        {
-            anim.SetBool("Sword", true);
 
+        //LADDER CODE
+        if (onLadder)
+        {
+            body.gravityScale = 0f;
+
+            climbVelocity = climbSpeed * Input.GetAxisRaw("Vertical");
+
+            body.velocity = new Vector2(body.velocity.x, climbVelocity);
         }
+
+        if(!onLadder)
+        {
+            body.gravityScale = gravityStore;
+        }
+        
     }
     public void Jump()
     {
@@ -154,5 +180,20 @@ public class PlayerController : MonoBehaviour
     {
         body.constraints = RigidbodyConstraints2D.None;
         body.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.transform.tag == "MovingPlatform")
+        {
+            transform.parent = other.transform;
+        }
+    }
+    void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.transform.tag == "MovingPlatform")
+        {
+            transform.parent = null;
+        }
     }
 }

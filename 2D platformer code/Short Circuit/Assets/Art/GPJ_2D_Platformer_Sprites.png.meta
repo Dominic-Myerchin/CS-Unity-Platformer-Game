@@ -44,6 +44,15 @@ TextureImporter:
   - first:
       213: 6856404424955050984
     second: Coin_3
+  - first:
+      213: 1079164134371101101
+    second: GPJ_2D_Platformer_Sprites_14
+  - first:
+      213: 7925188737213966737
+    second: GPJ_2D_Platformer_Sprites_15
+  - first:
+      213: 834523443618947226
+    second: Ladder
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -413,7 +422,7 @@ TextureImporter:
         width: 4
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -434,7 +443,7 @@ TextureImporter:
         width: 1
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -442,6 +451,69 @@ TextureImporter:
       bones: []
       spriteID: 8ebbcd96f77d62f50800000000000000
       internalID: 6856404424955050984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GPJ_2D_Platformer_Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 90
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da908830016f9fe00800000000000000
+      internalID: 1079164134371101101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GPJ_2D_Platformer_Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 94
+        width: 5
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199a093ca2debfd60800000000000000
+      internalID: 7925188737213966737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ladder
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 80
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90a4a586a2d49b00800000000000000
+      internalID: 834523443618947226
       vertices: []
       indices: 
       edges: []
