@@ -53,6 +53,21 @@ TextureImporter:
   - first:
       213: 834523443618947226
     second: Ladder
+  - first:
+      213: -799428881496870636
+    second: Enemy Star
+  - first:
+      213: -6929640672004428438
+    second: Flying_1
+  - first:
+      213: 6564776309499640511
+    second: Flying_2
+  - first:
+      213: -1909485809168917546
+    second: Flying_3
+  - first:
+      213: 2472262563187813513
+    second: Flying_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -514,6 +529,111 @@ TextureImporter:
       bones: []
       spriteID: a90a4a586a2d49b00800000000000000
       internalID: 834523443618947226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Star
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 95
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411f037faabd7e4f0800000000000000
+      internalID: -799428881496870636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 49
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6da31c0688f4df90800000000000000
+      internalID: -6929640672004428438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 49
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba30a59545ca1b50800000000000000
+      internalID: 6564776309499640511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 49
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db56d006c42085e0800000000000000
+      internalID: -1909485809168917546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying_4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 49
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c6e4ed3bd3f4220800000000000000
+      internalID: 2472262563187813513
       vertices: []
       indices: 
       edges: []

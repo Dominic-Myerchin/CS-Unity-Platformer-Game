@@ -2,27 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NinjaStarController : MonoBehaviour
+public class EnemyStarController : MonoBehaviour
 {
     public float speed;
 
     public PlayerController player;
 
-    public GameObject enemyDeathEffect;
+    //public GameObject enemyDeathEffect;
 
     public GameObject impactEffect;
 
-    public int pointsForKill;
+    //public int pointsForKill;
 
-    public int damageToGive; 
+    public int damageToGive;
 
     public float rotationSpeed;
+
+    private Rigidbody2D body;
     // Start is called before the first frame update
     void Start()
     {
+        body = GetComponent<Rigidbody2D>();
+
         player = FindObjectOfType<PlayerController>();
 
-        if (player.transform.localScale.x < 0)
+        if (player.transform.position.x < transform.position.x)
         {
             speed = -speed;
             rotationSpeed = -rotationSpeed;
@@ -32,10 +36,10 @@ public class NinjaStarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       GetComponent<Rigidbody2D>().velocity = new Vector3(speed, GetComponent<Rigidbody2D>().velocity.y, 1);
+        body.velocity = new Vector3(speed, body.velocity.y, 1);
 
-        GetComponent<Rigidbody2D>().angularVelocity = rotationSpeed;
-        
+        body.angularVelocity = rotationSpeed;
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -44,21 +48,19 @@ public class NinjaStarController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Player")
         {
-            other.GetComponent<EnemyHealthManager>().giveDamage(damageToGive);
             //Instantiate(enemyDeathEffect, other.transform.position, other.transform.rotation);
             //Destroy(other.gameObject);
             //ScoreManager.AddPoints(pointsForKill);
+            HealthManager.HurtPlayer(damageToGive);
         }
         else
         {
             Instantiate(impactEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
         }
-        
+        Destroy(gameObject);
     }
-    
 }
