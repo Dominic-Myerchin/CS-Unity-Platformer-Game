@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     public float sprintSpeed;
     private float moveVelocity;
     public float jumpHeight;
-
+    public bool sliding;
+    private float slideVelocity; 
+    
     //Variables for finding the ground
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -90,8 +92,20 @@ public class PlayerController : MonoBehaviour
             doubleJumped = true;
         }
 
-        //LEFT - RIGHT CONTROLS
+        if (Input.GetKey(KeyCode.LeftShift) && grounded)
+        {
+            sliding = true;
+            anim.SetBool("sliding", true);
+            moveSpeed = 15;
+        }
+        else
+        {
+            sliding = false;
+            anim.SetBool("sliding", false);
+            moveSpeed = 10;
+        }
 
+        //LEFT - RIGHT CONTROLS
         //moveVelocity = 0f;
         moveVelocity = moveSpeed * Input.GetAxisRaw("Horizontal");
         if (knockbackCount <= 0) { body.velocity = new Vector2(moveVelocity, body.velocity.y); }
@@ -136,6 +150,15 @@ public class PlayerController : MonoBehaviour
                     anim.SetBool("Sword", true);
 
                 }
+        if (anim.GetBool("Shockwave"))
+        {
+            anim.SetBool("Shockwave", false);
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            anim.SetBool("Shockwave", true);
+
+        }
 
         // WALKING ANIMATION
         anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
