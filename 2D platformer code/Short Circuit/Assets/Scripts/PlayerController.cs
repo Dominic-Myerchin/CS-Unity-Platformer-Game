@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
         
         //PLAYER FLIPPING
-        if(GetComponent<Rigidbody2D>().velocity.x > 0)
+        if(body.velocity.x > 0)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         } 

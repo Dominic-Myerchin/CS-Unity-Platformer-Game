@@ -10,10 +10,12 @@ public class EnemyHealthManager : MonoBehaviour
     public GameObject deathEffect;
 
     public int pointsOnDeath;
+
+    private Rigidbody2D enemyBody;
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -31,5 +33,17 @@ public class EnemyHealthManager : MonoBehaviour
     {
         enemyHealth -= damageToGive;
         GetComponent<AudioSource>().Play();
+    }
+
+    public void freeze()
+    {
+        enemyBody.constraints = RigidbodyConstraints2D.FreezePositionX;
+        enemyBody.constraints = RigidbodyConstraints2D.FreezePositionY;
+    }
+
+    public void unfreeze()
+    {
+        enemyBody.constraints = RigidbodyConstraints2D.None;
+        enemyBody.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 }
