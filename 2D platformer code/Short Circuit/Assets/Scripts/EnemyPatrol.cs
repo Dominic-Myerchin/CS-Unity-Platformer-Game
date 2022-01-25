@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public bool frozen;
     public float moveSpeed;
     public bool moveRight;
 
@@ -18,40 +17,37 @@ public class EnemyPatrol : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        frozen = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (!frozen)
-        {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(wallCheck.position, wallCheckRadius, whatIsWall);
-            if (colliders.Length > 0) { hittingWall = true; }
-            else { hittingWall = false; }
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(wallCheck.position, wallCheckRadius, whatIsWall);
+        if (colliders.Length > 0) { hittingWall = true; }
+        else { hittingWall = false; }
 
-            colliders = Physics2D.OverlapCircleAll(edgeCheck.position, wallCheckRadius, whatIsWall);
-            if (colliders.Length > 0) { AtEdge = false; }
-            else
-            { AtEdge = true; }
-
+        colliders = Physics2D.OverlapCircleAll(edgeCheck.position, wallCheckRadius, whatIsWall);
+        if (colliders.Length > 0) { AtEdge = false; }
+        else
+        { AtEdge = true; }
+        
 
             if (hittingWall || AtEdge)
-            {
-                moveRight = !moveRight;
-            }
-            if (moveRight)
-            {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
-                GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-            }
-            else
-            {
-                transform.localScale = new Vector3(1f, 1f, 1f);
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-            }
-
-
+        {
+            moveRight = !moveRight;
         }
+        if (moveRight)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        }
+        else 
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        }
+
+        
     }
 }
