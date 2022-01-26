@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed;
-    public float sprintSpeed;
+    public float slideSpeed;
     private float moveVelocity;
     public float jumpHeight;
     public bool sliding;
@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         gravityStore = body.gravityScale;
         onLadder = false;
+        slideSpeed = moveSpeed;
     }
 
     void FixedUpdate()
@@ -96,13 +97,13 @@ public class PlayerController : MonoBehaviour
         {
             sliding = true;
             anim.SetBool("sliding", true);
-            moveSpeed = 15;
+            moveSpeed = slideSpeed *2;
         }
         else
         {
             sliding = false;
             anim.SetBool("sliding", false);
-            moveSpeed = 10;
+            moveSpeed = slideSpeed;
         }
 
         //LEFT - RIGHT CONTROLS
@@ -209,7 +210,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.transform.tag == "MovingPlatform")
         {
-            transform.parent = other.transform;
+                transform.parent = other.transform;
         }
     }
     void OnCollisionExit2D(Collision2D other)

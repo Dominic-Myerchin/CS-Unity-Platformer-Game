@@ -56,6 +56,9 @@ TextureImporter:
   - first:
       213: -4788773078485675324
     second: gameart-pixilart_17
+  - first:
+      213: 154742375353038564
+    second: gameart-pixilart_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -506,7 +509,7 @@ TextureImporter:
         width: 10
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -514,6 +517,27 @@ TextureImporter:
       bones: []
       spriteID: 4c258e2d14cda8db0800000000000000
       internalID: -4788773078485675324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameart-pixilart_18
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 157
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e63e9ade51c52200800000000000000
+      internalID: 154742375353038564
       vertices: []
       indices: 
       edges: []

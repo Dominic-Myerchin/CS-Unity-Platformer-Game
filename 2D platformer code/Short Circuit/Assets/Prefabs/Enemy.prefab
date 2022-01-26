@@ -220,7 +220,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.025}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.2155
 --- !u!61 &5480251467221358833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.36}
+  m_Size: {x: 0.44, y: 0.48}
   m_EdgeRadius: 0
 --- !u!114 &5480251467221358838
 MonoBehaviour:
