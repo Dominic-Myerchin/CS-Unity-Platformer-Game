@@ -39,7 +39,7 @@ public class ShootAtPlayerInRange : MonoBehaviour
                 Instantiate(enemyStar, launchPoint.position, launchPoint.rotation);
             }
 
-            if (transform.localScale.x < 0 && player.transform.position.x > transform.position.x && player.transform.position.x < transform.position.x - playerRange)
+            if (transform.localScale.x > 0 && player.transform.position.x < transform.position.x && player.transform.position.x > transform.position.x - playerRange)
             {
                 Instantiate(enemyStar, launchPoint.position, launchPoint.rotation);
             }

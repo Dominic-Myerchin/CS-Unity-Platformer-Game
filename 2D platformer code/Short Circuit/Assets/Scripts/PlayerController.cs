@@ -211,6 +211,10 @@ public class PlayerController : MonoBehaviour
         if(other.transform.tag == "MovingPlatform")
         {
                 transform.parent = other.transform;
+                if (Input.GetButtonDown("Jump"))
+                {
+                    transform.parent = null;
+                }
         }
     }
     void OnCollisionExit2D(Collision2D other)

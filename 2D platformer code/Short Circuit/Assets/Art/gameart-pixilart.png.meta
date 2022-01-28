@@ -59,6 +59,36 @@ TextureImporter:
   - first:
       213: 154742375353038564
     second: gameart-pixilart_18
+  - first:
+      213: 3446764971123884845
+    second: gameart-pixilart_19
+  - first:
+      213: 7888310836161350237
+    second: gameart-pixilart_20
+  - first:
+      213: 7813611833987718403
+    second: gameart-pixilart_21
+  - first:
+      213: 620482981561771411
+    second: gameart-pixilart_22
+  - first:
+      213: 7894688341158504983
+    second: gameart-pixilart_23
+  - first:
+      213: 4612442469273924623
+    second: gameart-pixilart_24
+  - first:
+      213: -1844271719141025059
+    second: gameart-pixilart_25
+  - first:
+      213: -593929184779867822
+    second: gameart-pixilart_26
+  - first:
+      213: -1995241547392209838
+    second: gameart-pixilart_27
+  - first:
+      213: 4623363487073790488
+    second: gameart-pixilart_28
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -530,7 +560,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -538,6 +568,216 @@ TextureImporter:
       bones: []
       spriteID: 4e63e9ade51c52200800000000000000
       internalID: 154742375353038564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameart-pixilart_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d234910ca7e55df20800000000000000
+      internalID: 3446764971123884845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameart-pixilart_20
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 126
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a034359e8e87d60800000000000000
+      internalID: 7888310836161350237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameart-pixilart_21
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 142
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d50a190968f6c60800000000000000
+      internalID: 7813611833987718403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameart-pixilart_22
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 142
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3952a29fbf56c9800800000000000000
+      internalID: 620482981561771411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameart-pixilart_23
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 142
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71aab2be7319f8d60800000000000000
+      internalID: 7894688341158504983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameart-pixilart_24
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 142
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f047fffecffa20040800000000000000
+      internalID: 4612442469273924623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameart-pixilart_25
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 142
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddadc4f84a4d766e0800000000000000
+      internalID: -1844271719141025059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameart-pixilart_26
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 142
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259657f9d80f1c7f0800000000000000
+      internalID: -593929184779867822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameart-pixilart_27
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 142
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c2696426a7f44e0800000000000000
+      internalID: -1995241547392209838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gameart-pixilart_28
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 142
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a6b8a889c792040800000000000000
+      internalID: 4623363487073790488
       vertices: []
       indices: 
       edges: []

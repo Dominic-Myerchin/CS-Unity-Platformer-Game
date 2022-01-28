@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1146538692083005634}
   - component: {fileID: 1146538692083005637}
   - component: {fileID: 7746020044704808004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gameart-pixilart_15
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
