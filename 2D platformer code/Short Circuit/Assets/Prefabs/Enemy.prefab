@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 13
   m_Name: LaunchPoint
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -42,7 +42,7 @@ GameObject:
   m_Layer: 13
   m_Name: EdgeCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -72,7 +72,7 @@ GameObject:
   m_Layer: 13
   m_Name: WallCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -302,6 +302,9 @@ MonoBehaviour:
   deathEffect: {fileID: 2762638713489360504, guid: 166569105cd7f1a419e4e385c961d4e4,
     type: 3}
   pointsOnDeath: 500
+  shocked: 0
+  shocking: 0
+  shockTime: 5
 --- !u!114 &5480251467221358832
 MonoBehaviour:
   m_ObjectHideFlags: 0

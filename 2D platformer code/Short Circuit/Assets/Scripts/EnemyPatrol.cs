@@ -14,15 +14,19 @@ public class EnemyPatrol : MonoBehaviour
 
     private bool AtEdge;
     public Transform edgeCheck;
+
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+
         Collider2D[] colliders = Physics2D.OverlapCircleAll(wallCheck.position, wallCheckRadius, whatIsWall);
         if (colliders.Length > 0) { hittingWall = true; }
         else { hittingWall = false; }
@@ -31,9 +35,10 @@ public class EnemyPatrol : MonoBehaviour
         if (colliders.Length > 0) { AtEdge = false; }
         else
         { AtEdge = true; }
-        
 
-            if (hittingWall || AtEdge)
+   
+
+        if (hittingWall || AtEdge)
         {
             moveRight = !moveRight;
         }

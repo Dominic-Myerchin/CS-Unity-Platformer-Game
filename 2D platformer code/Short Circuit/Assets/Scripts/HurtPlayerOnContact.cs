@@ -6,9 +6,10 @@ using UnityEngine;
 public class HurtPlayerOnContact : MonoBehaviour
 {
     public int damageToGive;
+    private EnemyHealthManager enemyHealth;
     void Start()
     {
-        
+        enemyHealth = GetComponent<EnemyHealthManager>();
     }
     void Update()
     {
@@ -18,15 +19,19 @@ public class HurtPlayerOnContact : MonoBehaviour
     {
         if (other.name == "Player")
         {
-            HealthManager.HurtPlayer(damageToGive);
+            if (enemyHealth.shocked) { }
+            else
+            {
+                HealthManager.HurtPlayer(damageToGive);
 
-            other.GetComponent<AudioSource>().Play();
+                other.GetComponent<AudioSource>().Play();
 
-            var player = other.GetComponent<PlayerController>();
-            player.knockbackCount = player.knockbackLength;
+                var player = other.GetComponent<PlayerController>();
+                player.knockbackCount = player.knockbackLength;
 
-            if (other.transform.position.x < transform.position.x) { player.knockFromRight = true; }
-            else { player.knockFromRight = false; }
+                if (other.transform.position.x < transform.position.x) { player.knockFromRight = true; }
+                else { player.knockFromRight = false; }
+            }
         }
     }
 }

@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
 
     public string levelSelect;
 
+    public string settings;
+
     public int playerLives;
 
     public int playerHealth;
@@ -35,4 +37,8 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void SettingsMenu()
+    {
+        SceneManager.LoadScene(settings);
+    }
 }

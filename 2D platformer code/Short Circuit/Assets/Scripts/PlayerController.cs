@@ -46,6 +46,22 @@ public class PlayerController : MonoBehaviour
     private float climbVelocity;
     private float gravityStore;
 
+    //Wall Sliding
+    public Transform frontCheck;
+    bool wallSliding;
+    public float wallSlidingSpeed;
+
+    bool wallJumping;
+    public float xWallForce;
+    public float yWallForce;
+    public float wallJumpTime;
+
+    //Dynamic jump
+    private float jumpTimeCounter;
+    public float jumpTime;
+    private bool isJumping;
+
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -64,6 +80,11 @@ public class PlayerController : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, whatIsGround);
         if (colliders.Length > 0) { grounded = true; }
         else {grounded = false;}
+
+
+        Collider2D[] wallCheck = Physics2D.OverlapCircleAll(frontCheck.position, groundCheckRadius, whatIsGround);
+        if (wallCheck.Length > 0 && !grounded) { wallSliding = true; }
+        else { wallSliding = false; }
     }
 
     // Update is called once per frame
@@ -86,13 +107,32 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        // Dynamic jump
+        if (Input.GetButton("Jump") && isJumping == true)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                body.velocity = Vector2.up * jumpHeight;
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+            }
+        }
 
-        if (Input.GetButtonDown("Jump") && !grounded && !doubleJumped)
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
+        }
+
+        /*if (Input.GetButtonDown("Jump") && !grounded && !doubleJumped)
         {
             Jump();
             doubleJumped = true;
-        }
+        }*/
 
+        //SLIDING 
         if (Input.GetKey(KeyCode.LeftShift) && grounded)
         {
             sliding = true;
@@ -162,14 +202,14 @@ public class PlayerController : MonoBehaviour
         }
 
         // WALKING ANIMATION
-        anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+        anim.SetFloat("Speed", Mathf.Abs(body.velocity.x));
         
         //PLAYER FLIPPING
-        if(GetComponent<Rigidbody2D>().velocity.x > 0)
+        if(body.velocity.x > 0)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         } 
-        else if (GetComponent<Rigidbody2D>().velocity.x < 0)
+        else if (body.velocity.x < 0)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
@@ -188,11 +228,30 @@ public class PlayerController : MonoBehaviour
         {
             body.gravityScale = gravityStore;
         }
+
+        //WALL SLIDING
+        if (wallSliding)
+        {
+            body.velocity = new Vector2(body.velocity.x, Mathf.Clamp(body.velocity.y, -wallSlidingSpeed, float.MaxValue));
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                wallJumping = true;
+                Invoke("SetWallJumpingToFalse", wallJumpTime);
+            }
+        }
+
+        if (wallJumping)
+        {
+            body.velocity = new Vector2(xWallForce * -Input.GetAxisRaw("Horizontal"), yWallForce);
+        }
         
     }
     public void Jump()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+        isJumping = true;
+        jumpTimeCounter = jumpTime;
+        body.velocity = new Vector2(body.velocity.x, jumpHeight);
     }
     public void freezePosition()
     {
@@ -223,5 +282,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.parent = null;
         }
+    }
+
+    void SetWallJumpingToFalse()
+    {
+        wallJumping = false;
     }
 }

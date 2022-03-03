@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 13
   m_Name: EdgeCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -42,7 +42,7 @@ GameObject:
   m_Layer: 13
   m_Name: WallCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -249,7 +249,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a9ac967f85949294e805c1019b166d3b, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -272,6 +272,9 @@ MonoBehaviour:
   deathEffect: {fileID: 2762638713489360504, guid: 166569105cd7f1a419e4e385c961d4e4,
     type: 3}
   pointsOnDeath: 500
+  shocked: 0
+  shocking: 0
+  shockTime: 1
 --- !u!114 &1532594733490798853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78078b3736d0c214ca01fe1e7d354de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToGive: 1
+  damageToGive: 5
 --- !u!82 &1532594733490798860
 AudioSource:
   m_ObjectHideFlags: 0

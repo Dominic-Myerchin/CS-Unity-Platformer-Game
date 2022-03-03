@@ -25,8 +25,12 @@ public class HurtEnemyOnContact : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            other.GetComponent<EnemyHealthManager>().giveDamage(damageToGive);
-            body.velocity = new Vector2(body.velocity.x, bounceOnEnemy);
+            if (other.GetComponent<EnemyHealthManager>().shocked) { }
+            else
+            {
+                other.GetComponent<EnemyHealthManager>().giveDamage(damageToGive);
+                body.velocity = new Vector2(body.velocity.x, bounceOnEnemy);
+            }
         }
     }
 }
