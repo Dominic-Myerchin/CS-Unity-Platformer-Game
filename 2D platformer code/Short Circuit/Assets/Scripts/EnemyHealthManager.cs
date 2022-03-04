@@ -21,6 +21,8 @@ public class EnemyHealthManager : MonoBehaviour
 
     private Transform Player;
 
+    private Pathfinding.AIPath AIpath;
+
     
     private Animator anim;
     // Start is called before the first frame update
@@ -37,9 +39,9 @@ public class EnemyHealthManager : MonoBehaviour
     {
         if (enemyHealth <= 0)
         {
+            Destroy(gameObject);
             Instantiate(deathEffect, transform.position, transform.rotation);
             ScoreManager.AddPoints(pointsOnDeath);
-            Destroy(gameObject);
         }
 
         if (shocked)
@@ -64,10 +66,20 @@ public class EnemyHealthManager : MonoBehaviour
     public IEnumerator ShockEnemyCo()
     {
         shocking = true;
-        enemyBody.constraints = RigidbodyConstraints2D.FreezeAll;
-        anim.SetBool("Shocked", true);
+        if (enemyBody.Equals(null))
+        {
+            AIpath = GetComponent<Pathfinding.AIPath>();
+            AIpath.canMove = false;
+        }
+        else
+        {
+            enemyBody.constraints = RigidbodyConstraints2D.FreezeAll;
+            enemyBody.gravityScale = 0;
+            anim.SetBool("Shocked", true);
+            GetComponent<CircleCollider2D>().isTrigger = true;
+        }
         //Instantiate(deathParticle, player.transform.position, player.transform.rotation);
-        GetComponent<CircleCollider2D>().radius = 0;
+        
 
         Debug.Log("Player Shocked");
 
@@ -75,9 +87,18 @@ public class EnemyHealthManager : MonoBehaviour
 
         shocking = false;
         shocked = false;
-        enemyBody.constraints = RigidbodyConstraints2D.None;
-        enemyBody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        anim.SetBool("Shocked", false);
+        if (enemyBody.Equals(null))
+        {
+            AIpath.canMove = true;
+        }
+        else
+        {
+            enemyBody.constraints = RigidbodyConstraints2D.None;
+            enemyBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            enemyBody.gravityScale = 1;
+            GetComponent<CircleCollider2D>().isTrigger = false;
+            anim.SetBool("Shocked", false);
+        }
     }
 
     public void giveDamage(int damageToGive)

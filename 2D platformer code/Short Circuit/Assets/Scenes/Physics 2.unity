@@ -1198,9 +1198,10 @@ GameObject:
   - component: {fileID: 72127867}
   - component: {fileID: 72127868}
   - component: {fileID: 72127869}
-  m_Layer: 0
+  - component: {fileID: 72127870}
+  m_Layer: 13
   m_Name: Flying Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1345,12 +1346,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56b0410168565f4ab31f96bd6b37fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 1
-  deathEffect: {fileID: 0}
-  pointsOnDeath: 0
+  enemyHealth: 3
+  deathEffect: {fileID: 2762638713489360504, guid: 166569105cd7f1a419e4e385c961d4e4,
+    type: 3}
+  pointsOnDeath: 200
   shocked: 0
   shocking: 0
   shockTime: 0
+--- !u!58 &72127870
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72127862}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: 0.02}
+  serializedVersion: 2
+  m_Radius: 0.23
 --- !u!1001 &73737293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10415,7 +10433,7 @@ GameObject:
   - component: {fileID: 772638468}
   - component: {fileID: 772638469}
   - component: {fileID: 772638470}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: gameart-pixilart_29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15021,6 +15039,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Checkpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2517877640593130934, guid: 450053be6989e464bb52bad51843bd60,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2517877640593130934, guid: 450053be6989e464bb52bad51843bd60,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 450053be6989e464bb52bad51843bd60, type: 3}

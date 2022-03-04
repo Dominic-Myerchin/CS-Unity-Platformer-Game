@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private bool grounded;
 
     public bool dead;
-    private bool doubleJumped;
+    //private bool doubleJumped;
 
     //player flipping vars
     private Animator anim;
@@ -95,11 +95,12 @@ public class PlayerController : MonoBehaviour
         {
             levelManager.RespawnPlayer();
         }
+
         //JUMP CODE
-        if (grounded) 
+        /*if (grounded) 
         {
             doubleJumped = false;
-        }
+        }*/
 
         anim.SetBool("Grounded", grounded);
 
