@@ -466,6 +466,7 @@ MonoBehaviour:
   xWallForce: 5
   yWallForce: 10
   wallJumpTime: 0.05
+  jumpTime: 0
 --- !u!82 &1078917636097526988
 AudioSource:
   m_ObjectHideFlags: 0

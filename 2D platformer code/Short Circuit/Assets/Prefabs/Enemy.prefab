@@ -108,10 +108,10 @@ GameObject:
   - component: {fileID: 5480251467221358840}
   - component: {fileID: 5480251467221358832}
   - component: {fileID: 5480251467221358841}
-  - component: {fileID: 949424914}
   - component: {fileID: -6782403106103850205}
   - component: {fileID: 8438237105107307963}
   - component: {fileID: -8601670678892221220}
+  - component: {fileID: 815228124}
   m_Layer: 13
   m_Name: Enemy
   m_TagString: Enemy
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5480251467221358735}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c36300f265d840a4f846b69560f4a591, type: 3}
   m_Name: 
@@ -280,7 +280,7 @@ Animator:
   m_GameObject: {fileID: 5480251467221358735}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 349e8f0242c411c4c96885fe0cc91979, type: 2}
+  m_Controller: {fileID: 9100000, guid: 82a293c738a4af042a1c1a80725efae9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -417,25 +417,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &949424914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5480251467221358735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a3f2125ec5428f478dbcd1acc6771f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alerted: 0
-  playerRange: 5
-  enemyStar: {fileID: 6822061718116748600, guid: 6b4ffc8f831dd0f469edf8d64129afb3,
-    type: 3}
-  player: {fileID: 0}
-  launchPoint: {fileID: 1111839208}
-  waitBetweenShots: 0.5
 --- !u!114 &-6782403106103850205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,8 +469,8 @@ MonoBehaviour:
   centerOffsetCompatibility: NaN
   repathRateCompatibility: NaN
   canSearchCompability: 0
-  orientation: 0
-  enableRotation: 1
+  orientation: 1
+  enableRotation: 0
   autoRepath:
     mode: 2
     interval: 0.5
@@ -500,9 +481,9 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 0.6
-  pickNextWaypointDist: 2
+  pickNextWaypointDist: 1
   endReachedDistance: 0.2
-  alwaysDrawGizmos: 0
+  alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
@@ -519,4 +500,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 1078917636097526983, guid: 534dbadca8a3d3f47af10968b5b7c989, type: 3}
+  target: {fileID: 0}
+--- !u!114 &815228124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480251467221358735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b75ef5dbbdb2f47af10e520879ed8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alerted: 0
+  playerRange: 5
+  player: {fileID: 0}
