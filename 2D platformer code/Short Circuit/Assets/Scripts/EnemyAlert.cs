@@ -28,7 +28,8 @@ public class EnemyAlert : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((player.transform.position.x > transform.position.x && player.transform.position.x < transform.position.x + playerRange) || (player.transform.position.x < transform.position.x && player.transform.position.x > transform.position.x - playerRange))
+        if ((player.transform.position.x > transform.position.x && player.transform.position.x < transform.position.x + playerRange) 
+            || (player.transform.position.x < transform.position.x && player.transform.position.x > transform.position.x - playerRange))
         {
             alerted = true;
         }
