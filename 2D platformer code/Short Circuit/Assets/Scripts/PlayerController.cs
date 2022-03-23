@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
         {
             sliding = true;
             anim.SetBool("sliding", true);
-            moveSpeed = slideSpeed *2;
+            moveSpeed = slideSpeed + 3;
         }
         else
         {
